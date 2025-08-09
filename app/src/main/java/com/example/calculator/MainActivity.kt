@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -88,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         operation=op
         is_new_operation=true
         previous_calculation_textview.text="$first_number $operation"
+        result_textview.text="0"
 
 
     }
@@ -120,9 +122,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun calculator_backspace(){
         val curr_text=result_textview.text.toString()
-        if (curr_text.isNotEmpty()){
+        if (curr_text.isNotEmpty() && curr_text!="0" && curr_text!="Error"){
             result_textview.text=curr_text.dropLast(1)
-
+        }
+        else{
+            Toast.makeText(this,"invalid operation", Toast.LENGTH_SHORT).show()
         }
     }
 
