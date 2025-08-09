@@ -77,7 +77,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:text="C"
-                android:background="@color/clearColor"/>
+                android:background="@drawable/button_clear_background"/>
 
             <Button android:id="@+id/btnBackspace"
                 style="@style/CalculatorButton"
